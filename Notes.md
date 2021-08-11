@@ -1,4 +1,4 @@
-### Hyperparameter tuning
+## Hyperparameter tuning
 
 Hyperparameters are parameters that are not directly learnt by the model. They control the capacity of the model.
 
@@ -13,6 +13,17 @@ A search of a hyperparameter consists of:
 
 Low effective dimension: Some hyperparameters dimensions don't matter so much, they don't impact the cost that much.
 
-### Performance metrics
+## Performance metrics
 
 Use `make_score` to use a custom scoring function in scikit-learn.
+
+## Cross-validation
+
+### Schemes
+
+- **K-fold cross-validation**: The higher the K, the bigger the training set for each one of the k models 
+- **Leave-One-Out cross-validation**: Computationally expensive + Some metrics can't be estimated when we have one observation in the test fold
+- **Leave-P-Out cross-validation**
+- **Repeated K-Fold cross-validation**: Repeat a # of times (shuffle the data + K-fold CV)
+- **Stratified K-fold cross-validation**: Same as K-fold, but with the real proportion of observations of each class - Useful with imbalanced data
+
