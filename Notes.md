@@ -1,4 +1,4 @@
-## Hyperparameter tuning
+### Hyperparameter tuning
 
 Hyperparameters are parameters that are not directly learnt by the model. They control the capacity of the model.
 
@@ -13,3 +13,6 @@ A search of a hyperparameter consists of:
 
 Low effective dimension: Some hyperparameters dimensions don't matter so much, they don't impact the cost that much.
 
+### Performance metrics
+
+Use `make_score` to use a custom scoring function in scikit-learn.
