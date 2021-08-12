@@ -86,3 +86,16 @@ Prior probability is the unconditional probability assigned to an event before a
 The posterior probability of an event is the conditional probability that is assigned after taking into account the new evidence.
 
 Prior and Posterior probability are mathematically related by Bayes Rule
+
+When it comes to data and parameters, Bayes rule is applied as follows:
+
+![image-20210812161522082](_assets/Notes/image-20210812161522082.png)
+
+### Sequential model-based optimization
+
+![image-20210812163857616](_assets/Notes/image-20210812163857616.png)
+
+The posterior P(w|D) represents the updated belief of w after contemplating D. Given the posterior distribution P(w|D), we construct an acquisition function to determine the next query point to sample w.
+
+![image-20210812171935069](_assets/Notes/image-20210812171935069.png)
+
