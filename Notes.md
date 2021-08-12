@@ -53,3 +53,28 @@ Cons: It doesn't scale and is not reproducible + time-consuming
 It examines all possible combinations of the specified hyperparameters. It works well for models with simple hyperparameter spaces and it can be parallelized.
 
 Cons: The # of combinations grow exponentially + not practical for continuous hyperparameters
+
+### Random search
+
+Hyperparameter values are selected by independent draws from a uniform distribution of the hyperparameter space. The user determines how many combinations to examine.
+
+It is highly efficient in high dimensional spaces and well-suited for continuous hyperparameters. It is not that efficient in low dimensional spaces compared to grid search.
+
+## Bayesian optimization
+
+### Sequential search
+
+Grid search and random search generate all the candidate points up-front and evaluate them (in parallel).
+
+Sequential search techniques pick a few hyperparameter settings, evaluate their quality and then decide where to go next. This process is not parallelizable.
+
+Bayesian optimization is a sequential strategy for global optimization of black-box functions, it doesn't assume any functional form.
+
+![image-20210812153144201](_assets/Notes/image-20210812153144201.png)
+
+To **estimate the prior**, one can use many algorithms such as gaussian processes, tree-parzen estimator, random forest
+
+To know where to sample next, one needs an **acquisition function**:
+
+- Expected improvement (EI)
+- Gaussian process upper confidence bound (UCB)
