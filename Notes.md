@@ -78,3 +78,11 @@ To know where to sample next, one needs an **acquisition function**:
 
 - Expected improvement (EI)
 - Gaussian process upper confidence bound (UCB)
+
+### Bayesian inference
+
+Prior probability is the unconditional probability assigned to an event before any relevant information is taken into account.
+
+The posterior probability of an event is the conditional probability that is assigned after taking into account the new evidence.
+
+Prior and Posterior probability are mathematically related by Bayes Rule
