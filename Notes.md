@@ -17,9 +17,7 @@ Low effective dimension: Some hyperparameters dimensions don't matter so much, t
 
 Use `make_score` to use a custom scoring function in scikit-learn.
 
-## Cross-validation
-
-### Schemes
+## Cross-validation schemes
 
 - **K-fold cross-validation**: The higher the K, the bigger the training set for each one of the k models 
 - **Leave-One-Out cross-validation**: Computationally expensive + Some metrics can't be estimated when we have one observation in the test fold
@@ -38,5 +36,20 @@ Some data may not be independent or identically distributed (Grouped data from t
 
 Some advanced schemes are:
 
-- Nested cross-validation: We do two cross-validations, one to get the best model and one to get a better estimate of the generalization error. With every loop in the generalization error cross-val, one gets a new model and ends up then with many models at the end. The difficulty is to decide what to do with them!
+- **Nested cross-validation**: We do two cross-validations, one to get the best model and one to get a better estimate of the generalization error. With every loop in the generalization error cross-val, one gets a new model and ends up then with many models at the end. The difficulty is to decide what to do with them!
 
+Using many estimators in gridsearchcv: https://stackoverflow.com/a/53292354
+
+## Basic search algorithms
+
+### Manual search
+
+It's mainly used to get familiar with hyperparameters and their effects on the model and to delimit grid search.
+
+Cons: It doesn't scale and is not reproducible + time-consuming
+
+### Grid Search
+
+It examines all possible combinations of the specified hyperparameters. It works well for models with simple hyperparameter spaces and it can be parallelized.
+
+Cons: The # of combinations grow exponentially + not practical for continuous hyperparameters
