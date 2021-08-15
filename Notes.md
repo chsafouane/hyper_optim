@@ -60,6 +60,10 @@ Hyperparameter values are selected by independent draws from a uniform distribut
 
 It is highly efficient in high dimensional spaces and well-suited for continuous hyperparameters. It is not that efficient in low dimensional spaces compared to grid search.
 
+![image-20210815105908809](_assets/Notes/image-20210815105908809.png)
+
+If one chooses a random dimension (the embedding line) and start looking in it, he's very likely to find the optimal point, as looking or focusing on some dimensions doesn't get you that far (unimportant dimensions)
+
 ## Bayesian optimization
 
 ### Sequential search
@@ -98,4 +102,8 @@ When it comes to data and parameters, Bayes rule is applied as follows:
 The posterior P(w|D) represents the updated belief of w after contemplating D. Given the posterior distribution P(w|D), we construct an acquisition function to determine the next query point to sample w.
 
 ![image-20210812171935069](_assets/Notes/image-20210812171935069.png)
+
+<img src="_assets/Notes/image-20210815094443994.png" alt="image-20210815094443994" style="zoom:90%;" />
+
+<img src="_assets/Notes/image-20210815105101238.png" alt="image-20210815105101238" style="zoom:80%;" />
 
