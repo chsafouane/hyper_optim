@@ -107,3 +107,45 @@ The posterior P(w|D) represents the updated belief of w after contemplating D. G
 
 <img src="_assets/Notes/image-20210815105101238.png" alt="image-20210815105101238" style="zoom:80%;" />
 
+**Note**: The surrogate and the acquisition functions need to be cheaper to evaluate than f(x)
+
+## Other SMBO algorithms
+
+### SMAC
+
+Instead of using GP, SMAC approximates the loss using Random Forest.
+
+### TPE
+
+## Scikit-Optimize
+
+### Overview
+
+**Search algorithms**:
+
+- BO with Gaussian Processes `gp_minimize`
+- BO with RF and extra trees `forest_minimize`
+- BO with Gradient Boosting Trees `gdbrt_minimize`
+- Random Search `dummy_minimize`
+
+The **objective function** is created by the user. The objective function takes the ML model, the hyperparameters and the performance metric. It's fully customizable and works with any other package. For scikit-learn models, it provides a wrapper `BayesSearchCV`
+
+**Search space**: It has a built-in module to create hyperparameter spaces to sample from.
+
+- Reals and integers: uniform and log-uniform distributions
+- Categories: 
+
+**Acquisition function**: Built-in acquisition functions:
+
+- Expected improvement (EI)
+- Probability improvement (PI)
+- Lower Confidence Bound (LCB)
+
+**Analysis**: Built-in functions to explore the results of the search:
+
+- `plot_convergence` plots the convergence plot
+- `plot_evaluations` to see the order of search of hyperparameters
+- `plot_objective` to see how the objective function varies with the hyperparameters
+
+**Parallelization**: It allows the search to be done in // => More evaluations of f(x) needed
+
